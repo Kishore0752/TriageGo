@@ -9,13 +9,17 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from difflib import get_close_matches
 from typing import Optional
-
+from dotenv import load_dotenv
 router = APIRouter()
 
+
+load_dotenv()  # 👈 IMPORTANT
+
+GOOGLE_API_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
 # ---------------------------------------------------------------------------
 # CONFIG
 # ---------------------------------------------------------------------------
-GOOGLE_API_KEY = "AIzaSyDWMf5GAHWzGMU-eZllo31hgDdfiIFlo3U"  # paste key here
+# GOOGLE_API_KEY = ""  # paste key here
 
 PLACES_NEARBY_URL   = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
 PLACES_TEXT_URL     = "https://maps.googleapis.com/maps/api/place/textsearch/json"

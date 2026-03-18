@@ -583,11 +583,11 @@ export default function HomeScreen() {
           </div>
 
           {/* Quick suggestions (specialty chips) */}
-          <div className="specialty-chips" style={{ paddingBottom:14, display:'flex', gap:8, flexWrap:'wrap' }}>
+          <div className="specialty-chips" style={{ paddingBottom:14 }}>
             {suggestions.map(s => (
               <button key={s} onClick={() => handleSuggestion(s)}
                 className={query===s ? 'chip chip--active' : 'chip'}
-                style={{ whiteSpace:'nowrap', cursor:'pointer', padding:'6px 12px', borderRadius:999, border:'1px solid #e5e7eb', background: query===s ? '#111827' : '#fff', color: query===s ? '#fff' : '#374151', fontWeight:700 }}
+                style={{ whiteSpace:'nowrap' }}
               >
                 {s}
               </button>
