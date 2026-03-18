@@ -87,11 +87,9 @@ If you want, I can also add a minimal CI workflow (GitHub Actions) that runs lin
 
 ## Screenshots
 
-Project screenshots (example views) — click to enlarge.
+Project screenshots
 
-![Hero screenshot](frontend/src/assets/hero.png)
 
-Gallery:
 
 ![Screen 1](frontend/src/assets/img1.jpeg)  ![Screen 2](frontend/src/assets/img2.jpeg)  ![Screen 3](frontend/src/assets/img3.jpeg)
 
@@ -99,20 +97,11 @@ Each image is included from `frontend/src/assets/`. If you prefer different imag
 
 # 📚 MedCompare Project - Complete Documentation
 
-## 🎯 What Was Accomplished
 
-### ✅ Project Reorganization (100% Complete)
-
-Your project has been professionally reorganized with:
-
-1. **Backend Structure** - From monolithic to modular
-2. **Frontend Structure** - Better organization for scalability
-3. **New Feature** - Hospital contact details (phone, website, hours)
-4. **Documentation** - Comprehensive guides for the new structure
 
 ---
 
-## 📁 New Project Structure
+## 📁 Project Structure
 
 ### Backend: `backend/api/`
 ```
@@ -162,7 +151,6 @@ src/
 
 ---
 
-## 🆕 New Features Added
 
 ### Contact Details Feature
 
