@@ -1,6 +1,5 @@
 # 🔐 Environment variables (VERY IMPORTANT)
-.env
-
+**/.env
 # 📦 Node modules
 node_modules/
 
