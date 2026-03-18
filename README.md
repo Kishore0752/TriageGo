@@ -85,6 +85,18 @@ License & acknowledgements
 
 If you want, I can also add a minimal CI workflow (GitHub Actions) that runs lint/tests on push and a short CONTRIBUTING guide.
 
+## Screenshots
+
+Project screenshots (example views) — click to enlarge.
+
+![Hero screenshot](frontend/src/assets/hero.png)
+
+Gallery:
+
+![Screen 1](frontend/src/assets/img1.jpeg)  ![Screen 2](frontend/src/assets/img2.jpeg)  ![Screen 3](frontend/src/assets/img3.jpeg)
+
+Each image is included from `frontend/src/assets/`. If you prefer different images or captions, tell me the filenames and captions and I will update them.
+
 # 📚 MedCompare Project - Complete Documentation
 
 ## 🎯 What Was Accomplished
@@ -524,9 +536,4 @@ Ideas for future enhancements:
 ---
 
 
-
----
-
-**Project Version:** 3.0.0 (Organized & Enhanced)  
-**Last Updated:** March 17, 2026  
 **Status:** ✅ Complete & Ready
