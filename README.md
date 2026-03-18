@@ -1,3 +1,90 @@
+# MedCompare (TriageGo)
+
+Lightweight, AI-assisted medical center discovery using Google Maps APIs.
+
+This repository contains a FastAPI backend and a React + Vite frontend that together provide:
+- Symptom/service search for nearby hospitals and diagnostic centers
+- AI-based ranking and recommendations
+- Contact details (phone, website, opening hours)
+- SOS emergency endpoint that returns nearest 24/7 hospitals
+
+Repo layout (high level)
+- backend/         FastAPI backend and related services
+- frontend/        React + Vite frontend
+
+Quick start (development)
+
+1) Set your Google Maps API key (recommended):
+
+Windows (cmd):
+
+```cmd
+set GOOGLE_MAPS_API_KEY=your_key_here
+```
+
+PowerShell:
+
+```powershell
+$env:GOOGLE_MAPS_API_KEY = "your_key_here"
+```
+
+Linux / macOS:
+
+```bash
+export GOOGLE_MAPS_API_KEY=your_key_here
+```
+
+Or create a `backend/.env` file containing:
+
+```
+GOOGLE_MAPS_API_KEY=your_key_here
+```
+
+2) Start backend
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+The backend exposes the API under `/api/v1`. Visit http://localhost:8000/docs for Swagger UI.
+
+3) Start frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+By default the frontend expects the backend at `http://localhost:8000/api/v1`.
+
+API Endpoints (most relevant)
+- POST /api/v1/search — search hospitals by symptoms or name
+- POST /api/v1/sos — emergency quick-search for nearest hospitals
+- POST /api/v1/contact-details — fetch phone/website/hours by place_id
+- GET  /api/v1/debug — diagnostics and API-key check
+
+Notes on API key handling
+- The backend reads the Google Maps API key from the `GOOGLE_MAPS_API_KEY` environment variable. Avoid committing keys to source control.
+- If you prefer a `.env` file, ensure your code loads it (python-dotenv) and add `.env` to `.gitignore`.
+
+Local development tips
+- If using a mobile device to test the frontend against your local dev server, set `frontend/src/constants/theme.jsx` or `config/api.js` to point to your machine IP (e.g. `http://192.168.1.8:8000/api/v1`) and ensure `uvicorn` is started with `--host 0.0.0.0`.
+- Use the `/debug` endpoint to verify the Google API key and basic Google Maps calls from the backend.
+
+Contributing
+- Create a branch for your work, open a PR, and include tests or screenshots for UI changes.
+
+Security
+- Do not commit API keys or secrets. Use environment variables or a secrets manager.
+
+License & acknowledgements
+- This project uses Google Maps Platform (Places, Distance Matrix). Make sure your billing and quotas are set appropriately.
+
+If you want, I can also add a minimal CI workflow (GitHub Actions) that runs lint/tests on push and a short CONTRIBUTING guide.
+
 # 📚 MedCompare Project - Complete Documentation
 
 ## 🎯 What Was Accomplished
@@ -269,7 +356,6 @@ POST /api/v1/heatmap
 ```
 GET /api/v1/debug?lat=17.385&lon=78.486
 ```
-
 ---
 
 ## 📱 Frontend Integration
